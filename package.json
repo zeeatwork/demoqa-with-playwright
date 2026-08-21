@@ -1,0 +1,22 @@
+{
+  "name": "demo-with-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/zeeatwork/demoqa-with-playwright#readme",
+  "bugs": {
+    "url": "https://github.com/zeeatwork/demoqa-with-playwright/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeeatwork/demoqa-with-playwright.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0"
+  }
+}
