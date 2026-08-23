@@ -1,18 +1,17 @@
 import { test, expect } from '@playwright/test';
+  
+test('text box form submission smoke test', async ({ page }) => {
 
-test('has title', async ({ page }) => {
-  await page.goto('/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/demosite/);
+  await page.goto('/text-box');
+  await page.getByPlaceholder('Full Name').fill('Zenzi Tester');
+  await page.getByPlaceholder('name@example.com').fill('zenzi.tester@example.com');
+  await page.getByPlaceholder('Current Address').fill('123 Test Automation Lane');
+  await page.getByRole('button', { name: /submit/i }).click();
+  await expect(
+    page.locator('id=name'))
+  .toContainText('Zenzi Tester');
+  await expect(page.locator('id=email')
+  ).toContainText('zenzi.tester@example.com');
 });
 
-test('book store link', async ({ page }) => {
-  await page.goto('/');
 
-  // Click the get book store link.
-  await page.getByRole('link', { name: 'books' }).click();
-
-  // Expects page to have a heading with the name of ToolsQA
-  await expect(page.getByRole('img', { name: 'Toolsqa' })).toBeVisible();
-});
